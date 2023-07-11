@@ -20,6 +20,12 @@ public class MovieService implements MovieServiceInterface {
    public List<Movie> getAllMovie() {
 
       return mDao.getAllMovie();
-   };
+   }
+
+    @Override
+    @Transactional
+   public Movie getMovieById(int id) {
+      return mDao.getMovieById(id);
+   }
 
 }

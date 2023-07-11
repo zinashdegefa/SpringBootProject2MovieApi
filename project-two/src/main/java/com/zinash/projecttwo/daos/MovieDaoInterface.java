@@ -9,5 +9,7 @@ public interface MovieDaoInterface {
 
  List<Movie> getAllMovie();
 
+ Movie getMovieById(int id);
+
 
 }

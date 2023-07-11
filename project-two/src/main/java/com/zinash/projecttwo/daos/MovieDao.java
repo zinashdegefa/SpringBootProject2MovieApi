@@ -21,4 +21,12 @@ public class MovieDao implements MovieDaoInterface{
         Query<Movie> query = currentSession.createQuery("From Movie", Movie.class);
         return query.getResultList();
     }
+
+    @Override
+    public Movie getMovieById(int id) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        return  currentSession.get(Movie.class, id);
+
+    }
+
 }

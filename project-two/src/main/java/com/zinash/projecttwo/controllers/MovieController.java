@@ -4,6 +4,7 @@ import com.zinash.projecttwo.models.Movie;
 import com.zinash.projecttwo.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLOutput;
@@ -22,6 +23,14 @@ public class MovieController {
 
     }
 
-    ;
+    @GetMapping("/movie/{id}")
+    public Movie getMovieById(@PathVariable int id){
+
+        return movieService.getMovieById(id);
+    }
+
+
+
+
 
 }

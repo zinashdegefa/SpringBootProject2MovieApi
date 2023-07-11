@@ -8,4 +8,6 @@ public interface MovieServiceInterface {
 
  List<Movie>getAllMovie();
 
+ Movie getMovieById(int id);
+
 }
