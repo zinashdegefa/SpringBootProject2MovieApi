@@ -29,4 +29,15 @@ public class MovieDao implements MovieDaoInterface{
 
     }
 
+    @Override
+    public void saveMovie(Movie movie) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        currentSession.saveOrUpdate(movie);
+
+    }
+
+
+
+
+
 }

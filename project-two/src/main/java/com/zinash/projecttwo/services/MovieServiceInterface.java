@@ -10,4 +10,6 @@ public interface MovieServiceInterface {
 
  Movie getMovieById(int id);
 
+ void saveMovie(Movie movie);
+
 }

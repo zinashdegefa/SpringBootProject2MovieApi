@@ -11,5 +11,7 @@ public interface MovieDaoInterface {
 
  Movie getMovieById(int id);
 
+ void saveMovie(Movie movie);
+
 
 }

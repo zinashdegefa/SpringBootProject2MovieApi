@@ -3,9 +3,7 @@ package com.zinash.projecttwo.controllers;
 import com.zinash.projecttwo.models.Movie;
 import com.zinash.projecttwo.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLOutput;
 import java.util.List;
@@ -28,6 +26,21 @@ public class MovieController {
 
         return movieService.getMovieById(id);
     }
+
+    @PostMapping("/saveMovie")
+    public void saveMovie(@RequestBody Movie movie) {
+        movieService.saveMovie(movie);
+    }
+
+    @PutMapping("/updateMovie")
+    public Movie updateMovie(@RequestBody Movie movie) {
+        movieService.saveMovie(movie);
+        return movie;
+    }
+
+
+
+
 
 
 

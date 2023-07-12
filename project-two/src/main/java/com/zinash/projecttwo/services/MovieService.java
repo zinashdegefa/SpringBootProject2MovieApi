@@ -28,4 +28,10 @@ public class MovieService implements MovieServiceInterface {
       return mDao.getMovieById(id);
    }
 
+    @Override
+    @Transactional
+   public void saveMovie(Movie movie) {
+      mDao.saveMovie(movie);
+   }
+
 }
