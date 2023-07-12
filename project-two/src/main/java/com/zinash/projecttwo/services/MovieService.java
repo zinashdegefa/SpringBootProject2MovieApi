@@ -34,4 +34,10 @@ public class MovieService implements MovieServiceInterface {
       mDao.saveMovie(movie);
    }
 
+    @Override
+    @Transactional
+   public void deleteMovie(int id) {
+      mDao.deleteMovie(id);
+   }
+
 }

@@ -36,6 +36,14 @@ public class MovieDao implements MovieDaoInterface{
 
     }
 
+    @Override
+    public void deleteMovie(int id) {
+        Session currentSession = entityManager.unwrap(Session.class);
+        Movie movie = currentSession.get(Movie.class, id);
+        currentSession.delete(movie);
+
+    }
+
 
 
 

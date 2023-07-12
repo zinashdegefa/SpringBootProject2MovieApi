@@ -13,5 +13,7 @@ public interface MovieDaoInterface {
 
  void saveMovie(Movie movie);
 
+ void deleteMovie(int id);
+
 
 }

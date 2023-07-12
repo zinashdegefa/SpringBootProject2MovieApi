@@ -28,8 +28,9 @@ public class MovieController {
     }
 
     @PostMapping("/saveMovie")
-    public void saveMovie(@RequestBody Movie movie) {
+    public String saveMovie(@RequestBody Movie movie) {
         movieService.saveMovie(movie);
+        return "The Movie is Saved!";
     }
 
     @PutMapping("/updateMovie")
@@ -39,7 +40,11 @@ public class MovieController {
     }
 
 
-
+    @DeleteMapping("/movie/delete/{id}")
+    public String deleteMovie(@PathVariable int id) {
+    movieService.deleteMovie(id);
+    return "Id number " + id + " is deleted!";
+    }
 
 
 
