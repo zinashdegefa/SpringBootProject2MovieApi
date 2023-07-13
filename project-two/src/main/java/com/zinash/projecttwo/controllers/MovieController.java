@@ -30,12 +30,14 @@ public class MovieController {
     @PostMapping("/saveMovie")
     public String saveMovie(@RequestBody Movie movie) {
         movieService.saveMovie(movie);
+        System.out.println(movie.getTitle() + " is Saved!");
         return "The Movie is Saved!";
     }
 
     @PutMapping("/updateMovie")
     public Movie updateMovie(@RequestBody Movie movie) {
         movieService.saveMovie(movie);
+        System.out.println(movie.getTitle() + " is updated!");
         return movie;
     }
 

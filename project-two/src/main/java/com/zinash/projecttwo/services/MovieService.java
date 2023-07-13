@@ -18,26 +18,40 @@ public class MovieService implements MovieServiceInterface {
   @Override
    @Transactional
    public List<Movie> getAllMovie() {
+      List<Movie>  listOfMovie = mDao.getAllMovie();
+      for(Movie m: listOfMovie) {
+          System.out.println("Title: " + m.getTitle());
+          System.out.println("Movie Detail: " + m);
 
-      return mDao.getAllMovie();
+      }
+      return listOfMovie;
    }
 
     @Override
     @Transactional
    public Movie getMovieById(int id) {
-      return mDao.getMovieById(id);
+      Movie getMovieById = mDao.getMovieById(id);
+        System.out.println("The Id of the movie is " + getMovieById.getId());
+        System.out.println("The Title is " + getMovieById.getTitle());
+        System.out.println("Details of the movie is " + getMovieById);
+
+      return getMovieById;
    }
 
     @Override
     @Transactional
    public void saveMovie(Movie movie) {
       mDao.saveMovie(movie);
+
+        System.out.println(movie);
+
    }
 
     @Override
     @Transactional
    public void deleteMovie(int id) {
-      mDao.deleteMovie(id);
+       mDao.deleteMovie(id);
+     System.out.println("The move with id number "  + id + " is deleted!");
    }
 
 }
