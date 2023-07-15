@@ -49,6 +49,12 @@ public class MovieService implements MovieServiceInterface {
 
     @Override
     @Transactional
+    public void updateMovie(Movie movie) {
+        mDao.saveMovie(movie);
+    }
+
+    @Override
+    @Transactional
    public void deleteMovie(int id) {
        mDao.deleteMovie(id);
      System.out.println("The move with id number "  + id + " is deleted!");
