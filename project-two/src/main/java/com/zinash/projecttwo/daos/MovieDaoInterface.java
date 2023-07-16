@@ -1,19 +1,13 @@
 package com.zinash.projecttwo.daos;
 
 import com.zinash.projecttwo.models.Movie;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface MovieDaoInterface {
-
-
- List<Movie> getAllMovie();
-
- Movie getMovieById(int id);
-
- void saveMovie(Movie movie);
-
- void deleteMovie(int id);
+@Repository
+public interface MovieDaoInterface extends JpaRepository<Movie, Integer> {
 
 
 }
